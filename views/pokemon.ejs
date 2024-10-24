@@ -1,31 +1,17 @@
+
+
+
 <!DOCTYPE html>
-<html lang="en">
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title><%= title %></title>
-  <link rel="stylesheet" href="/styles.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title><%= pokemon.nome %></title>
 </head>
 <body>
-  <header>
-    <h1>Pokémon Manager</h1>
-    <nav>
-      <ul>
-        <li><a href="/">Home</a></li>
-      </ul>
-    </nav>
-  </header>
-
-  <main>
-    <%- body %>
-  </main>
-
-  <footer>
-    <p>© 2024 Pokémon Manager</p>
-  </footer>
+    
+<h1><%= pokemon.nome %></h1>
+<p>Tipo: <%= pokemon.tipo %></p>
+<a href="/">Voltar à Pokédex</a>
 </body>
 </html>
-
-
-
-

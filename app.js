@@ -1,6 +1,5 @@
 const express = require('express');
 const bodyParser = require('body-parser');
-const expressLayouts = require('express-ejs-layouts'); // Adicione esta linha
 const pokemonRoutes = require('./routes/pokemonRoutes');
 
 const app = express();
