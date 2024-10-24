@@ -3,30 +3,30 @@ body {
   font-family: Arial, sans-serif;
   margin: 0;
   padding: 0;
-  background-color: #f0f8ff; /* Cor de fundo clara */
+  background-color: #f0f8ff; 
 }
 
 header {
-  background-color: #1e3a6e; /* Azul escuro */
+  background-color: #1e3a6e; 
   color: white;
   text-align: center;
   padding: 20px 0;
 }
 
 .container {
-  max-width: 800px; /* Largura máxima para o conteúdo */
-  margin: 0 auto; /* Centraliza o container */
+  max-width: 800px; 
+  margin: 0 auto; 
   padding: 20px;
 }
 
 .title {
-  color: #1e3a6e; /* Azul escuro */
+  color: #1e3a6e; 
   text-align: center;
   margin-bottom: 20px;
 }
 
 .form-container {
-  background-color: #e3f2fd; /* Azul claro */
+  background-color: #e3f2fd;
   padding: 15px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -42,14 +42,14 @@ label {
 }
 
 input {
-  width: 100%; /* Largura total do input */
+  width: 100%; 
   padding: 8px;
   border: 1px solid #ccc;
   border-radius: 4px;
 }
 
 .add-btn {
-  background-color: #1e3a6e; /* Azul escuro */
+  background-color: #1e3a6e; 
   color: white;
   padding: 10px 15px;
   border: none;
@@ -58,7 +58,7 @@ input {
 }
 
 .add-btn:hover {
-  background-color: #36599a; /* Azul um pouco mais claro ao passar o mouse */
+  background-color: #36599a; 
 }
 
 .pokemon-list-container {
@@ -71,10 +71,10 @@ input {
 }
 
 .pokemon-item {
-  display: flex; /* Flexbox para alinhar os itens */
-  justify-content: space-between; /* Espaço entre os elementos */
-  align-items: center; /* Alinhamento vertical */
-  background-color: #e3f2fd; /* Azul claro */
+  display: flex;
+  justify-content: space-between; 
+  align-items: center; 
+  background-color: #e3f2fd; 
   padding: 10px;
   margin-bottom: 10px;
   border-radius: 8px;
@@ -82,7 +82,7 @@ input {
 }
 
 .delete-btn {
-  background-color: #e53935; /* Vermelho para o botão de excluir */
+  background-color: #e53935; 
   color: white;
   padding: 8px 12px;
   border: none;
@@ -91,15 +91,15 @@ input {
 }
 
 .delete-btn:hover {
-  background-color: #ffffff; /* Vermelho um pouco mais escuro ao passar o mouse */
+  background-color: #ffffff; 
 }
 
 footer {
   text-align: center;
   padding: 10px 0;
-  background-color: #1e3a6e; /* Azul escuro */
+  background-color: #1e3a6e; 
   color: white;
-  position: relative; /* Para manter o footer na parte inferior */
+  position: relative; 
   bottom: 0;
   width: 100%;
 }
