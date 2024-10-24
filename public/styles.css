@@ -1,92 +1,86 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: Arial, sans-serif;
-    background-color: #1e3a8a; /* Azul escuro */
-    color: #ffffff; /* Branco para contraste */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    height: 100vh;
-  }
-  
-  .container {
-    background-color: #3b82f6; /* Azul claro */
-    border-radius: 10px;
-    padding: 20px;
-    width: 80%;
-    max-width: 600px;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.2);
-    text-align: center;
-  }
-  
-  .title {
-    font-size: 2rem;
-    margin-bottom: 20px;
-    color: #ffffff;
-  }
-  
-  .pokemon-list {
-    list-style-type: none;
-    padding: 0;
-  }
-  
-  .pokemon-item {
-    background-color: #1e40af; /* Azul ainda mais escuro */
-    margin-bottom: 15px;
-    padding: 10px;
-    border-radius: 5px;
-    color: #ffffff;
-  }
-  
-  .pokemon-info {
-    margin-bottom: 10px;
-  }
-  
-  form {
-    margin-bottom: 15px;
-  }
-  
-  .form-group {
-    margin-bottom: 10px;
-  }
-  
-  label {
-    display: block;
-    font-weight: bold;
-    margin-bottom: 5px;
-  }
-  
-  input[type="text"],
-  input[type="number"] {
-    width: 100%;
-    padding: 8px;
-    border-radius: 5px;
-    border: 1px solid #ffffff;
-    background-color: #e0f2fe; /* Azul claro muito suave */
-    color: #1e3a8a; /* Azul escuro */
-  }
-  
-  .add-btn, .delete-btn {
-    background-color: #1e3a8a;
-    color: #ffffff;
-    border: none;
-    padding: 10px 20px;
-    border-radius: 5px;
-    cursor: pointer;
-  }
-  
-  .add-btn:hover, .delete-btn:hover {
-    background-color: #3b82f6;
-  }
-  
-  footer {
-    margin-top: 20px;
-    font-size: 0.8rem;
-    color: #9ca3af; /* Cinza claro */
-  }
-  
+body {
+  background-color: #f0f4ff; /* Fundo claro para contrastar com azul */
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+}
+
+.container {
+  width: 90%;
+  max-width: 800px;
+  margin: 20px auto;
+  padding: 20px;
+  border-radius: 8px;
+  background-color: #ffffff; /* Fundo branco para o container */
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.title {
+  text-align: center;
+  color: #003366; /* Azul escuro */
+}
+
+.form-container, .pokemon-list-container {
+  margin: 20px 0;
+}
+
+h3 {
+  text-align: center;
+  color: #00509e; /* Azul claro */
+}
+
+.add-pokemon-form {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.form-group {
+  margin: 10px 0;
+  width: 100%;
+}
+
+label {
+  margin-bottom: 5px;
+  color: #003366; /* Azul escuro */
+}
+
+input {
+  padding: 10px;
+  width: 80%;
+  border: 1px solid #cccccc;
+  border-radius: 4px;
+}
+
+.add-btn, .delete-btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  background-color: #00509e; 
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.add-btn:hover, .delete-btn:hover {
+  background-color: #003366;
+}
+
+.pokemon-list {
+  list-style-type: none;
+  padding: 0;
+}
+
+.pokemon-item {
+  background-color: #e6f0ff; 
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 4px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.pokemon-info {
+  flex-grow: 1;
+}

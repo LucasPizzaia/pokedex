@@ -1,5 +1,6 @@
 const express = require('express');
 const bodyParser = require('body-parser');
+const expressLayouts = require('express-ejs-layouts'); // Adicione esta linha
 const pokemonRoutes = require('./routes/pokemonRoutes');
 
 const app = express();
@@ -8,10 +9,12 @@ app.set('views', './views');
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(express.static('public'));
+app.use(expressLayouts); 
 
 app.use('/', pokemonRoutes);
 
-const PORT = process.env.PORT || 4000;
+const PORT = process.env.PORT || 3000;
 app.listen(PORT, () => {
   console.log(`Server is running on http://localhost:${PORT}`);
 });
+
