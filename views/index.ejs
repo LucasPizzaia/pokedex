@@ -1,2 +1,47 @@
+<% layout('layout') %> <!-- Use 'layout' em vez de 'include' -->
+
+<div class="container">
+  <h2 class="title">Lista de Pokémons</h2>
+
+  <ul class="pokemon-list">
+    <% pokemons.forEach(pokemon => { %>
+      <li class="pokemon-item">
+        <div class="pokemon-info">
+          <strong><%= pokemon.nome %></strong> - <%= pokemon.tipo %><br>
+          <small>Altura: <%= pokemon.altura %> m | Peso: <%= pokemon.peso %> kg | Nível de Poder: <%= pokemon.nivelPoder %></small>
+        </div>
+        <form action="/pokemon/delete/<%= pokemon.id %>" method="POST" class="delete-form">
+          <button type="submit" class="delete-btn">Excluir</button>
+        </form>
+      </li>
+    <% }) %>
+  </ul>
+
+  <h2 class="title">Adicionar Pokémon</h2>
+
+  <form action="/pokemon" method="POST" class="add-pokemon-form">
+    <div class="form-group">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" name="nome" required>
+    </div>
+    <div class="form-group">
+      <label for="tipo">Tipo:</label>
+      <input type="text" id="tipo" name="tipo" required>
+    </div>
+    <div class="form-group">
+      <label for="altura">Altura (m):</label>
+      <input type="number" step="0.1" id="altura" name="altura" required>
+    </div>
+    <div class="form-group">
+      <label for="peso">Peso (kg):</label>
+      <input type="number" step="0.1" id="peso" name="peso" required>
+    </div>
+    <div class="form-group">
+      <label for="nivelPoder">Nível de Poder:</label>
+      <input type="number" id="nivelPoder" name="nivelPoder" required>
+    </div>
+    <button type="submit" class="add-btn">Adicionar</button>
+  </form>
+</div>
 
 
