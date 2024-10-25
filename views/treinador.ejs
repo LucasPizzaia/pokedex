@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <title>Treinadores</title>
+</head>
+<body>
+    <h1>Treinadores</h1>
+    <ul>
+        <% treinador.forEach(function(treinador) { %>
+        <li>
+            <a href="/treinador/<%= treinador.id %>"><%= treinador.nome %></a>
+            <form action="/delete-treinador/<%= treinador.id %>" method="POST">
+                <button type="submit">Excluir</button>
+            </form>
+        </li>
+        <% }); %>
+    </ul>
+    <h2>Adicionar um  Novo Treinador</h2>
+    <form action="/add-treinador" method="POST">
+        <label for="nome">Nome:</label>
+        <input type="text" id="nome" name="nome" required>
+        <button type="submit">Adicionar Treinador</button>
+    </form>
+    <a href="/">Voltar à Página Inicial</a>
+</body>
+</html>
