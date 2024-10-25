@@ -8,3 +8,4 @@ router.post('/add-treinador', treinadorController.addTreinador);
 router.post('/delete-treinador/:id', treinadorController.deleteTreinador);
 
 module.exports = router;
+
