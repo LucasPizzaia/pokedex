@@ -7,5 +7,6 @@ router.get('/treinador/:id', treinadorController.getTreinador);
 router.post('/add-treinador', treinadorController.addTreinador);
 router.post('/delete-treinador/:id', treinadorController.deleteTreinador);
 
-module.exports = router;
+module.exports=router;
+
 

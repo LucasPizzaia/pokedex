@@ -16,4 +16,3 @@ const deleteTreinador = (id) => {
 };
 
 module.exports = { getTreinador, getTreinadorById, createTreinador, deleteTreinador };
-
