@@ -4,5 +4,5 @@ const pokemonController = require('../controllers/pokemonController');
 
 router.get('/',pokemonController.getAllPokemons);
 router.get('/pokemon/:id', pokemonController.getPokemon);
-
-module.exports = router;
+router.post('/add-pokemon', pokemonController.addPokemon)
+module.exports=router;

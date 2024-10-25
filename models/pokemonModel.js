@@ -6,6 +6,7 @@ const pokemons = [
 
 const getPokemons = () => pokemons;
 const getPokemonById = (id) => pokemons.find(p => p.id === parseInt(id));
-const createPokemon = (nome, tipo) => pokemons.push(pokemons.lenght+1, nome, tipo)
-
+const createPokemon = (nome, tipo) => {const novoPokemon = { id: pokemons.length + 1, nome, tipo }
+    pokemons.push(novoPokemon)
+   }
 module.exports = {getPokemons, getPokemonById,createPokemon};
