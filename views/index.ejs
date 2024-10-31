@@ -1,37 +1,36 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
-  <head>
-    <meta charset="UTF-8" />
+<head>
+    <meta charset="UTF-8">
     <title>Pokédex</title>
-    <link rel="stylesheet" href="home.css" />
-  </head>
-  <body>
+    <link rel="stylesheet" href="home.css">
+</head>
+<body>
     <h1>Pokédex</h1>
 
     <div class="menu">
-      <a href="/" class="button">Página Inicial</a>
-      <a href="/treinador" class="button">Visualizar Treinadores</a>
+        <a href="/treinador" class="button">Visualizar Treinadores</a>
     </div>
 
     <ul>
-      <% pokemons.forEach(function(pokemon) { %>
-      <li>
-        <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.nome %></a> - <%= pokemon.tipo %>
-      </li>
-      <% }); %>
+        <% pokemons.forEach(function(pokemon) { %>
+            <li>
+                <a href="/pokemon/<%= pokemon.id %>"><%= pokemon.nome %></a> - <%= pokemon.tipo %>
+            </li>
+        <% }); %>
     </ul>
 
     <div class="pokemon-form">
-      <h2>Adicionar um novo Pokémon</h2>
-      <form action="/add-pokemon" method="POST">
-        <label for="nome">Nome:</label>
-        <input type="text" id="nome" name="nome" required />
+        <h2>Adicionar um novo Pokémon</h2>
+        <form action="/add-pokemon" method="POST">
+            <label for="nome">Nome:</label>
+            <input type="text" id="nome" name="nome" required />
 
-        <label for="tipo">Tipo:</label>
-        <input type="text" id="tipo" name="tipo" required />
+            <label for="tipo">Tipo:</label>
+            <input type="text" id="tipo" name="tipo" required />
 
-        <button type="submit">Adicionar Pokémon</button>
-      </form>
+            <button type="submit">Adicionar Pokémon</button>
+        </form>
     </div>
-  </body>
+</body>
 </html>

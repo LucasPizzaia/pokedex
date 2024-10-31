@@ -20,4 +20,5 @@ const addPokemon = (req, res) => {
     res.redirect('/')
 };
 
+
 module.exports={ getAllPokemons,getPokemon,addPokemon};

@@ -6,22 +6,31 @@
 </head>
 <body>
     <h1>Treinadores</h1>
-    <ul>
-        <% treinadores.forEach(function(treinador) { %>
-        <li>
-            <a href="/treinador/<%= treinador.id %>"><%= treinador.nome %></a>
-            <form action="/delete-treinador/<%= treinador.id %>" method="POST">
-                <button type="submit">Excluir</button>
-            </form>
-        </li>
-        <% }); %>
-    </ul>
+
     <h2>Adicionar um Novo Treinador</h2>
     <form action="/add-treinador" method="POST">
         <label for="nome">Nome:</label>
         <input type="text" id="nome" name="nome" required>
+
+        <h3>Escolha os Pokémon:</h3>
+        <% pokemons.forEach(function(pokemon) { %>
+            <input type="checkbox" name="pokemons" value="<%= pokemon.id %>">
+            <%= pokemon.nome %><br>
+        <% }); %>
+
         <button type="submit">Adicionar Treinador</button>
     </form>
-    <a href="/">Voltar à Página Inicial</a>
+
+    <h2>Lista de Treinadores</h2>
+    <ul>
+        <% treinadores.forEach(function(treinador) { %>
+            <li>
+                <%= treinador.nome %>
+                <form action="/delete-treinador/<%= treinador.id %>" method="POST" style="display:inline;">
+                    <button type="submit">Excluir</button>
+                </form>
+            </li>
+        <% }); %>
+    </ul>
 </body>
 </html>
