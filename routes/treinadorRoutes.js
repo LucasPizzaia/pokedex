@@ -9,4 +9,6 @@ router.post('/delete-treinador/:id', treinadorController.deleteTreinador);
 router.post('/treinador/:id/add-pokemon', treinadorController.addPokemonToTreinador);
 router.post('/treinador/:id/remove-pokemon/:pokemonId', treinadorController.removePokemonFromTreinador);
 
+
+
 module.exports = router;

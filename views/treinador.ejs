@@ -13,7 +13,7 @@
         <input type="text" id="nome" name="nome" required>
 
         <h3>Escolha os Pokémon:</h3>
-        <% pokemons.forEach(function(pokemon) { %>
+        <% pokemons.forEach(function(pokemon) { %> 
             <input type="checkbox" name="pokemons" value="<%= pokemon.id %>">
             <%= pokemon.nome %><br>
         <% }); %>
@@ -26,11 +26,28 @@
         <% treinadores.forEach(function(treinador) { %>
             <li>
                 <%= treinador.nome %>
+                <form action="/treinador/<%= treinador.id %>" method="GET" style="display:inline;">
+                    <button type="submit">Ver Pokémon</button>
+                </form>
                 <form action="/delete-treinador/<%= treinador.id %>" method="POST" style="display:inline;">
                     <button type="submit">Excluir</button>
                 </form>
             </li>
         <% }); %>
     </ul>
+
+    <% if (treinador) { %>
+        <h2>Pokémons de <%= treinador.nome %></h2>
+        <ul>
+            <% pokemonsDoTreinador.forEach(function(pokemon) { %>
+                <li>
+                    <%= pokemon.nome %>
+                    <form action="/treinador/<%= treinador.id %>/remove-pokemon/<%= pokemon.id %>" method="POST" style="display:inline;">
+                        <button type="submit">Remover</button>
+                    </form>
+                </li>
+            <% }); %>
+        </ul>
+    <% } %>
 </body>
 </html>

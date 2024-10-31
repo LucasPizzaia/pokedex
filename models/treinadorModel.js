@@ -1,11 +1,20 @@
+const pokemonModel = require('./pokemonModel'); 
+
 const treinadores = [
-    { id: 1, nome: 'Ash', pokemons: [] },
+    { id: 1, nome: 'Ash', pokemons: [] }, 
     { id: 2, nome: 'Misty', pokemons: [] },
     { id: 3, nome: 'Juca', pokemons: [] }
 ];
 
 const getTreinador = () => treinadores;
-const getTreinadorById = (id) => treinadores.find(t => t.id === parseInt(id));
+const getTreinadorById = (id) => {
+    const treinador = treinadores.find(t => t.id === parseInt(id));
+    if (treinador) {
+     
+        treinador.pokemons = treinador.pokemons.map(pokemonId => pokemonModel.getPokemonById(pokemonId)).filter(p => p); 
+    }
+    return treinador;
+};
 const createTreinador = (nome, pokemons) => {
     const novoTreinador = { id: treinadores.length + 1, nome, pokemons };
     treinadores.push(novoTreinador);
@@ -19,7 +28,7 @@ const deleteTreinador = (id) => {
 const addPokemonToTreinador = (treinadorId, pokemonId) => {
     const treinador = getTreinadorById(treinadorId);
     if (treinador && !treinador.pokemons.includes(pokemonId)) {
-        treinador.pokemons.push(pokemonId); // Adiciona o Pokémon ao treinador
+        treinador.pokemons.push(pokemonId); 
     }
 };
 

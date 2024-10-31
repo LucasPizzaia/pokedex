@@ -4,18 +4,23 @@ const pokemonModel = require('../models/pokemonModel');
 const getAllTreinador = (req, res) => {
     const treinadores = treinadorModel.getTreinador();
     const pokemons = pokemonModel.getPokemons();
-    res.render('treinador', { treinadores, pokemons });
+    res.render('treinador', { treinadores, pokemons, treinador: null }); 
 };
 
 const getTreinador = (req, res) => {
     const treinador = treinadorModel.getTreinadorById(req.params.id);
     if (treinador) {
-        const pokemons = pokemonModel.getPokemons(); // Pega todos os Pokémon disponíveis
-        res.render('treinadorDetalhes', { treinador, pokemons }); // Renderiza a página de detalhes do treinador
+        const pokemonsDoTreinador = treinador.pokemons.map(pokemonId => pokemonModel.getPokemonById(pokemonId)).filter(p => p); 
+        const allPokemons = pokemonModel.getPokemons(); 
+        res.render('treinador', { treinador, pokemonsDoTreinador, pokemons: allPokemons }); 
     } else {
         res.status(404).send('Treinador de Pokémon não encontrado');
     }
 };
+
+
+
+
 
 const addTreinador = (req, res) => {
     const { nome, pokemons } = req.body;
@@ -32,22 +37,22 @@ const deleteTreinador = (req, res) => {
 const addPokemonToTreinador = (req, res) => {
     const treinadorId = req.params.id;
     const pokemonId = parseInt(req.body.pokemon);
-    treinadorModel.addPokemonToTreinador(treinadorId, pokemonId); // Adiciona o Pokémon ao treinador
-    res.redirect(`/treinador/${treinadorId}`); // Redireciona para a página de detalhes do treinador
+    treinadorModel.addPokemonToTreinador(treinadorId, pokemonId);
+    res.redirect(`/treinador/${treinadorId}`);
 };
 
 const removePokemonFromTreinador = (req, res) => {
     const treinadorId = req.params.id;
     const pokemonId = parseInt(req.params.pokemonId);
-    treinadorModel.removePokemonFromTreinador(treinadorId, pokemonId); // Remove o Pokémon do treinador
-    res.redirect(`/treinador/${treinadorId}`); // Redireciona para a página de detalhes do treinador
+    treinadorModel.removePokemonFromTreinador(treinadorId, pokemonId);
+    res.redirect(`/treinador/${treinadorId}`);
 };
 
-module.exports = { 
-    getAllTreinador, 
-    getTreinador, 
-    addTreinador, 
-    deleteTreinador, 
-    addPokemonToTreinador, 
-    removePokemonFromTreinador 
+module.exports = {
+    getAllTreinador,
+    getTreinador,
+    addTreinador,
+    deleteTreinador,
+    addPokemonToTreinador,
+    removePokemonFromTreinador
 };
