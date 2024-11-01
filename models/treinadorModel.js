@@ -20,7 +20,7 @@ const createTreinador = (nome, pokemons) => {
     treinadores.push(novoTreinador);
 };
 
-const deleteTreinador = (id) => {
+const deleteTreinador = (id) => {   
     const index = treinadores.findIndex(t => t.id === parseInt(id));
     if (index !== -1) treinadores.splice(index, 1);
 };
