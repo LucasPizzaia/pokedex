@@ -25,16 +25,25 @@
     <ul>
         <% treinadores.forEach(function(treinador) { %>
             <li>
-                <%= treinador.nome %>
-                <form action="/treinador/<%= treinador.id %>" method="GET" style="display:inline;">
-                    <button type="submit">Ver Pokémon</button>
-                </form>
+                <strong><%= treinador.nome %></strong>
+                <ul>
+                    <% if (treinador.pokemons && treinador.pokemons.length > 0) { %>
+                        <% treinador.pokemons.forEach(function(pokemon) { %>
+                            <li><%= pokemon.nome %></li>
+                        <% }); %>
+                    <% } else { %>
+                        <li>Sem Pokémon</li>
+                    <% } %>
+                </ul>
                 <form action="/delete-treinador/<%= treinador.id %>" method="POST" style="display:inline;">
                     <button type="submit">Excluir</button>
                 </form>
             </li>
         <% }); %>
     </ul>
+</body>
+</html>
+
 
     <% if (treinador) { %>
         <h2>Pokémons de <%= treinador.nome %></h2>
